@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>112351051_楊建隆_HW2</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <style>
+            body {
+                background-color: black; /* 页面背景保持黑色 */
+                color: black; /* 文本颜色改为黑色以适应白色背景 */
+                font-family: Arial, sans-serif;
+            }
+            #title-container {
+                text-align: center; /* 使标题居中 */
+                width: 100%; /* 容器宽度设为100% */
+                margin-top: -10px; /* 顶部间距 */
+                font-size: 60px;
+            }
+            #scatter-container {
+                margin: 20px auto;
+                top: -20px;
+                right: 180px; /* 向左移动一些 */
+                width: 900px;
+                height: 650px;
+                padding: 10px;
+                position: relative;
+                border-radius: 15px; /* 添加圆角边框 */
+            }
+            #chart-note {
+                position: absolute; /* 使用绝对定位 */
+                bottom: 50px; /* 距离底部10px */
+                right: 10%; /* 定位到中间，可能需要调整以对齐 */
+                transform: translateX(50%); /* 使用变换来精确居中 */
+                text-align: center; /* 文本居中 */
+                color: #ffcc00; /* 黄色文本 */
+                font-size: 12px; /* 文本大小 */
+            }
+            #scatter-title {
+                text-align: center;
+                font-size: 45px;
+                font-weight: bold;
+                color: white; /* 将标题颜色改为白色 */
+                border-radius: 10px; /* 标题容器圆角 */
+            }
+            #top-universities, #info-card {
+                position: absolute;
+                right: 80px; /* 向左移动 */
+                border: 1px solid black; /* 边框颜色改为黑色 */
+                padding: 10px;
+                width: 420px;
+                color: white; /* 信息卡片文本颜色保持白色 */
+                border-radius: 15px; /* 添加圆角边框 */
+            }
+            #info-card {
+                top: 100px; /* 将 Region Information 向下移动 */
+                margin-bottom: 80px;
+                font-size: 30px;
+                background-color: transparent; /* 移除背景色，变成透明 */
+                text-align: center; /* 全局居中 */
+            }
+            #top-universities {
+                top: 290px; /* 将 Top 10 Universities 向下移动 */
+                background-color: #333; /* 保持深色背景 */
+            }
+            svg {
+                background-color: white; /* 将 SVG 背景颜色改为白色 */
+                border-radius: 15px; /* 给 SVG 添加圆角 */
+            }
+            .axis-label {
+                fill: black; /* 坐标轴标签颜色改为黑色 */
+                font-size: 14px;
+            }
+            .legend text {
+                fill: black; /* 图例文本颜色设置为黑色 */
+            }
+            #university-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            }
+            #university-list li {
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 0;
+                border-bottom: 1px solid #ccc;
+            }
+            .uni-name {
+                text-align: left;
+            }
+            .wr-rank {
+                text-align: right;
+                margin-left: auto;
+                white-space: nowrap;
+            }
+            .source {
+                margin-top: 20px;
+                font-size: 14px;
+                color: white;
+                text-align: center;
+            }
+    </style> -->
+</head>
+<body>
+    <div id="title-container">
+        <h2 id="scatter-title">Top 100 Universities 2024: Student Population Comparison</h2>
+    </div>
+    <div id="scatter-container">
+        <svg width="1000" height="600"></svg>
+    </div>
+    <div id="chart-note">
+        <p style= "margin-top: -1px;"> *WR = World Ranking</p>
+    </div>
+    <div id="info-card">
+        <h3>Total Students</h3>
+        <p id="total-students"> </p>
+    </div>
+    <div id="top-universities">
+        <h3>Top 10 Universities</h3>
+        <ul id="university-list"></ul>
+    </div>
+    <p style="margin-top: -61px; font-size: 17px;color:white;"> 在這張圖表中，我觀察到不同地區的大學在排名和學生人數之間並沒有明顯的相關性。雖然有些排名靠前的大學學生人數較多，但並非所有高排名的大學都有龐大的學生規模。這意味著大學的全球排名並非僅僅依賴學生人數這一指標，反映了教育質量、研究能力和資源分配等其他因素的重要性。 </p> <p style="margin-bottom: 1px; font-size: 17px;color:white;"> 另外，圖表還顯示，北美和歐洲擁有更多世界排名靠前的大學，這可能與這些地區的教育資源豐富、科研投入充足有關。相比之下，亞洲的大學則顯示出快速增長的趨勢，特別是在學生規模上，有些大學擁有更大的人數，但在排名上相對落後，這可能是未來提升的潛力所在。 </p> <p style="margin-bottom: 1px; font-size: 17px;color:white;"> 總體來說，這張圖表讓我看到了全球頂尖大學的多樣性以及各地區的教育發展情況。這樣的數據分析為我提供了關於哪些地區正在引領全球教育的見解，以及哪些地區需要進一步加強在科研和教育質量方面的投資，從而在全球排名中取得更好的表現。 </p>
+        <!-- Source of Data -->
+        <div class="source">
+            國貿碩二 楊建隆 112351051 | Source: <a href="https://www.kaggle.com/datasets/r1chardson/the-world-university-rankings-2011-2023?select=2024_rankings.csv" target="_blank" style="color: #ffcc00;">THE World University Rankings 2024</a>
+        </div>
+    <script src="scatter.js"></script>
+</body>
+</html>

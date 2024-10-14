@@ -1,0 +1,93 @@
+body {
+    background-color: black; /* 页面背景保持黑色 */
+    color: black; /* 文本颜色改为黑色以适应白色背景 */
+    font-family: Arial, sans-serif;
+}
+#title-container {
+    text-align: center; /* 使标题居中 */
+    width: 100%; /* 容器宽度设为100% */
+    margin-top: -10px; /* 顶部间距 */
+    font-size: 60px;
+}
+#scatter-container {
+    margin: 20px auto;
+    top: -20px;
+    right: 180px; /* 向左移动一些 */
+    width: 900px;
+    height: 650px;
+    padding: 10px;
+    position: relative;
+    border-radius: 15px; /* 添加圆角边框 */
+}
+#chart-note {
+    position: absolute; /* 使用绝对定位 */
+    bottom: 50px; /* 距离底部10px */
+    right: 10%; /* 定位到中间，可能需要调整以对齐 */
+    transform: translateX(50%); /* 使用变换来精确居中 */
+    text-align: center; /* 文本居中 */
+    color: #ffcc00; /* 黄色文本 */
+    font-size: 12px; /* 文本大小 */
+}
+#scatter-title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: white; /* 将标题颜色改为白色 */
+    border-radius: 10px; /* 标题容器圆角 */
+}
+#top-universities, #info-card {
+    position: absolute;
+    right: 80px; /* 向左移动 */
+    border: 1px solid black; /* 边框颜色改为黑色 */
+    padding: 10px;
+    width: 420px;
+    color: white; /* 信息卡片文本颜色保持白色 */
+    border-radius: 15px; /* 添加圆角边框 */
+}
+#info-card {
+    top: 100px; /* 将 Region Information 向下移动 */
+    margin-bottom: 80px;
+    font-size: 30px;
+    background-color: transparent; /* 移除背景色，变成透明 */
+    text-align: center; /* 全局居中 */
+}
+#top-universities {
+    top: 290px; /* 将 Top 10 Universities 向下移动 */
+    background-color: #333; /* 保持深色背景 */
+}
+svg {
+    background-color: white; /* 将 SVG 背景颜色改为白色 */
+    border-radius: 15px; /* 给 SVG 添加圆角 */
+}
+.axis-label {
+    fill: black; /* 坐标轴标签颜色改为黑色 */
+    font-size: 14px;
+}
+.legend text {
+    fill: black; /* 图例文本颜色设置为黑色 */
+}
+#university-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+#university-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+.uni-name {
+    text-align: left;
+}
+.wr-rank {
+    text-align: right;
+    margin-left: auto;
+    white-space: nowrap;
+}
+.source {
+    margin-top: 20px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
